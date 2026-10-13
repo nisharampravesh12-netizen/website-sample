@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kids Fun World</title>
+
+  <link rel="stylesheet" href="domain.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Floating Butterflies -->
+  <div class="butterfly butterfly1">🦋</div>
+  <div class="butterfly butterfly2">🦋</div>
+  <div class="butterfly butterfly3">🦋</div>
+
+  <!-- Header -->
+  <header>
+    <h1 class="title">🌈 Kids Fun World 🌈</h1>
+
+    <nav>
+      <div class="navbar">
+      <a href="#home">Home</a>
+      <a href="domain1.html"> About</a>
+      <a href="#stories">Stories</a>
+      <a href="#rhymes">Rhymes</a>
+      <a href="#games">Games</a>
+      <a href="#riddles and puzzles"> Riddles and Puzzles </a>
+      <a href="#facts">Facts</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#animals">Animal Sounds</a>
+      <a href="#activities">Activities</a>
+      <a href="domain9.html">Alphabets</a>
+    </div>
+    </nav>
+    
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <h2>✨ Welcome Kids ✨</h2>
+    <p>
+      Learn, Play, Sing & Explore Amazing Fun Activities!
+    </p>
+
+    <button onclick="playWelcome()">🔊 Play Welcome Sound</button>
+  </section>
+
+  <!-- STORIES -->
+  <section id="stories" class="card">
+    <h2>📚 Fun Stories</h2>
+
+    <div class="story-box">
+      <h3>The Clever Rabbit 🐰</h3>
+      <p>
+        Once upon a time, a clever rabbit saved all animals
+        from a lion using intelligence and bravery.
+      </p>
+    </div>
+    <a href="domain2.html">Click here for more stories</a>
+  </section>
+
+  <!-- RHYMES -->
+  <section id="rhymes" class="card">
+    <h2>🎵 Poems & Rhymes</h2>
+
+    <p class="moving-text">
+      Twinkle Twinkle Little Star ⭐
+    </p>
+  <a href="domain3.html">learn more</a>
+    
+  </section>
+
+  <!-- GAMES -->
+  <section id="games" class="card">
+    <h2>🎮 Mini Game</h2>
+
+    <p>Click the button to score points!</p>
+
+    <button id="gameBtn">Click Me!</button>
+
+    <h3>Score: <span id="score">0</span></h3>
+    <a href="domain4.html">More games</a>
+  </section>
+
+  <!-- RIDDLES -->
+  <section id="riddles and puzzles" class="card">
+    <h2>❓ Riddles and Puzzles</h2>
+ 
+    <div class="riddle">
+      <p>
+        What has hands but cannot clap?
+      </p>
+
+      <button onclick="showAnswer()">Show Answer</button>
+
+      <p id="answer"></p>
+    </div>
+     <a href="domain5.html">Riddles</a>
+     <a href="domain5-1.html">Puzzles</a>
+  </section>
+
+  <!-- AMAZING FACTS -->
+  <section id="facts" class="card">
+    <h2>🤯 Amazing Facts</h2>
+
+    <ul>
+      <li>🐙 Octopus has 3 hearts.</li>
+      <li>🦒 Giraffes sleep only 30 minutes a day.</li>
+      <li>🐬 Dolphins can recognize themselves in mirrors.</li>
+    </ul>
+  <a href="domain6.html">
+     Click here for more fascinating facts
+        </a>
+
+    
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="card">
+    <h2>🧠 Quiz Time</h2>
+
+    <p>Which planet is called the Red Planet?</p>
+
+    <button onclick="checkQuiz('Earth')">Earth</button>
+    <button onclick="checkQuiz('Mars')">Mars</button>
+    <button onclick="checkQuiz('Jupiter')">Jupiter</button>
+
+    <h3 id="quizResult"></h3>
+    <a href="domain7.html">click here for more</a>
+  </section>
+
+  <!-- ANIMAL SOUNDS -->
+  <section id="animals" class="card">
+    <h2>🐶 Animal Sounds</h2>
+
+    <button onclick="playDog()">Dog Sound</button>
+    <button onclick="playCat()">Cat Sound</button><br>
+
+    <audio controls id="dogAudio"
+      src="dog.mp3" type="audio/mp3">
+    </audio>
+
+    <audio  controls id="catAudio"
+      src="cat.mp3" type="audio/mp3">
+    </audio><br>
+    <a href="domain8.html">other animals</a>
+   </section>
+
+  <!-- ACTIVITIES -->
+  <section id="activities" class="card">
+    <h2>✂️ Fun Activities</h2>
+
+    <div class="activity-grid">
+
+      <div class="activity">
+        <h3>🦢 Paper Folding</h3>
+        <p>Learn Origami Swan Folding.</p>
+
+        <a href="domain paperfolding - Copy.html">
+          Watch Video
+        </a>
+      </div>
+
+      <div class="activity">
+        <h3>⭐ Join The Dots</h3>
+        <p>Connect dots and make pictures.</p>
+
+        <a href="domain join the dot 1.html">
+          Play Now
+        </a>
+      </div>
+
+      <div class="activity">
+        <h3>✂️ Paper Cutting</h3>
+        <p>Create beautiful paper art.</p>
+
+        <a href="domain paper cutting.html">
+          Learn More
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>🌟 Made with Love for Kids 🌟</p>
+  </footer>
+
+  <script>
+
+    // Welcome Sound
+    function playWelcome() {
+      const msg = new SpeechSynthesisUtterance(
+        "Welcome to Kids Fun World"
+      );
+      speechSynthesis.speak(msg);
+    }
+
+    // Game
+    let score = 0;
+
+    document.getElementById("gameBtn").addEventListener("click", () => {
+      score++;
+      document.getElementById("score").innerText = score;
+    });
+
+    // Riddle
+    function showAnswer() {
+      document.getElementById("answer").innerHTML =
+        "⌚ A Clock!";
+    }
+
+    // Quiz
+    function checkQuiz(answer) {
+
+      if(answer === "Mars") {
+        document.getElementById("quizResult").innerHTML =
+          "✅ Correct Answer!";
+      }
+      else {
+        document.getElementById("quizResult").innerHTML =
+          "❌ Try Again!";
+      }
+    }
+
+    // Animal Sounds
+    function playDog() {
+      document.getElementById("dogAudio").play();
+    }
+
+    function playCat() {
+      document.getElementById("catAudio").play();
+    }
+
+  </script>
+
+</body>
+</html>
